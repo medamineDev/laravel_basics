@@ -1,6 +1,38 @@
+var host = "http://laravel.dev:8000/";
+
+
+
+function save_user() {
+
+
+    var name = $('#name_txt').val();
+    var email = $('#email_txt').val();
+    var age = $('#age_txt').val();
+    var url = host + "ajax_save_user";
+
+    $.ajax({
+
+        url: url,
+        data: {name: name, email: email, age: age},
+        type: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+    }).done(function (response) {
+
+
+        console.log(response.status);
+    })
+
+
+}
+
+
 $(document).ready(function () {
 
     console.log("document ready");
+
+
     $("#regForm").submit(function (event) {
         event.preventDefault();
         var $form = $(this),
@@ -57,7 +89,7 @@ $(document).ready(function () {
 
             if (response.error == 0) {
 
-               // window.location.href = response.path;
+                window.location.href = response.path;
 
             } else {
 

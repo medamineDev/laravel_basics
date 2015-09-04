@@ -42,7 +42,9 @@ class AuthController extends Controller
      */
     public function __construct()
     {
+
         $this->middleware('guest', ['except' => 'getLogout']);
+
         // App::setLocale('fr');
 
     }
@@ -177,7 +179,7 @@ class AuthController extends Controller
 
                 return response('Error')
                     ->header('Content-Type', 'Email or password is wrong')
-                    ->header('Error  Code', '403');
+                    ->header('Error_Code', '403');
 
 
                 /*return Response::json([

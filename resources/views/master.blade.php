@@ -26,6 +26,7 @@
         var host = "http://laravel.dev:8000/";
 
     </script>
+
     <script src="{{ URL::asset('javascrypt/main.js') }}"></script>
 
 

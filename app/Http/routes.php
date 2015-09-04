@@ -29,6 +29,11 @@ Route::get('/home', [
     'uses' => 'HomeController@index'
 ]);
 
+Route::post('/ajax_save_user', [
+    'middleware' => 'auth',
+    'uses' => 'HomeController@ajax_save_user'
+]);
+
 
 
 Route::group(['prefix' => 'auth'], function () {

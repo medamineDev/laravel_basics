@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
+    <meta name="csrf-token" content="{!! csrf_token() !!}"/>
 
     <link rel="shortcut icon" href="{{ URL::asset('template/images/favicon.png') }}">
 
@@ -658,6 +659,10 @@
 <!--common script init for all pages-->
 <script src="{{ URL::asset('template/js/scripts.js') }}"></script>
 
+
+
+
+<script src="{{ URL::asset('javascrypt/main.js') }}"></script>
 
 
 
