@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Input;
 use App\User;
+use DB;
 use Illuminate\Support\Facades\Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use  Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class HomeController extends Controller
 {
@@ -45,6 +48,14 @@ class HomeController extends Controller
 
         );
         return Response::json($response);
+
+
+    }
+
+    public function get_users()
+    {
+
+        return $users = DB::table('users')->paginate(2);
 
 
     }

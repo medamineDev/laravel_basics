@@ -34,6 +34,11 @@ Route::post('/ajax_save_user', [
     'uses' => 'HomeController@ajax_save_user'
 ]);
 
+Route::get('/get_users', [
+
+    'uses' => 'HomeController@get_users'
+]);
+
 
 
 Route::group(['prefix' => 'auth'], function () {
